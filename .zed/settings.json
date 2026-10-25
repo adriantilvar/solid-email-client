@@ -1,0 +1,56 @@
+{
+  "lsp": {
+    "oxlint": {
+      "initialization_options": {
+        "settings": {
+          "run": "onType",
+          "fixKind": "safe_fix",
+          "typeAware": true,
+          "unusedDisableDirectives": "deny"
+        }
+      }
+    },
+    "oxfmt": {
+      "initialization_options": {
+        "settings": {
+          "fmt.configPath": "./vite.config.ts",
+          "run": "onSave"
+        }
+      }
+    }
+  },
+  "formatter": [
+    { "language_server": { "name": "oxfmt" } },
+    { "code_action": "source.fixAll.oxc" },
+    { "code_action": "source.organizeImports.oxc" }
+  ],
+  "format_on_save": "on",
+  "prettier": { "allowed": false },
+  "languages": {
+    "TypeScript": {
+      "language_servers": [
+        "vtsls",
+        "oxlint",
+        "oxfmt",
+        "tailwindcss-language-server",
+        "codebook"
+      ]
+    },
+    "TSX": {
+      "language_servers": [
+        "vtsls",
+        "oxlint",
+        "oxfmt",
+        "tailwindcss-language-server",
+        "emmet-language-server",
+        "codebook"
+      ]
+    },
+    "HTML": { "language_servers": ["oxfmt", "codebook"] },
+    "CSS": { "language_servers": ["oxfmt", "codebook"] },
+    "JSON": { "language_servers": ["oxfmt", "codebook"] },
+    "JSONC": { "language_servers": ["oxfmt", "codebook"] },
+    "Markdown": { "language_servers": ["oxfmt", "codebook"] },
+    "MDX": { "language_servers": ["oxfmt", "codebook"] }
+  }
+}
