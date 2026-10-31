@@ -4,8 +4,16 @@
 // query() caches reads per key; action() marks writes, and the router
 // revalidates queries after an action settles.
 import { action, query } from "@solidjs/router"
+import { reload } from "@solidjs/web"
 
-import { findUser, listEmails, listUsers, updateUser } from "../server/db"
+import {
+  Email,
+  findUser,
+  listEmails,
+  listUsers,
+  patchEmail,
+  updateUser,
+} from "../server/db"
 // import { clearSession, getSession, setSession } from "../server/session";
 
 // Mail
@@ -13,7 +21,14 @@ import { findUser, listEmails, listUsers, updateUser } from "../server/db"
 export const getEmails = query(async () => {
   "use server"
   return listEmails()
-}, "emails")
+}, "email:list")
+
+export const updateEmail = async (id: string, data: Partial<Email>) => {
+  "use server"
+  patchEmail(id, data)
+
+  return reload({ revalidate: getEmails.key })
+}
 
 // Default
 

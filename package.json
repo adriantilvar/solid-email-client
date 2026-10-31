@@ -13,14 +13,12 @@
     "prepare": "vp config"
   },
   "dependencies": {
-    "@js-temporal/polyfill": "0.5.1",
     "@lucide/solid": "1.61.0",
     "@solidjs/meta": "1.0.0-next.2",
     "@solidjs/router": "2.0.0-next.40",
     "@solidjs/web": "2.0.0-rc.15",
-    "@tailwindcss/vite": "4.3.3",
+    "cn": "0.5.0",
     "solid-js": "2.0.0-rc.15",
-    "tailwindcss": "4.3.3",
     "valibot": "1.5.0",
     "vite-plugin-solid": "2.11.14"
   },
@@ -29,6 +27,7 @@
     "@solidjs/start-devtools": "1.0.0-next.4",
     "@solidjs/testing-library": "1.0.0-beta.3",
     "@solidjs/vite-plugin": "3.0.0-next.48",
+    "@tailwindcss/vite": "4.3.3",
     "@testing-library/jest-dom": "7.0.0",
     "@types/node": "26.2.0",
     "eslint-plugin-solid": "0.18.1",
@@ -36,6 +35,7 @@
     "jsdom": "25.0.1",
     "oxfmt": "0.73.0",
     "oxlint": "1.88.0",
+    "tailwindcss": "4.3.3",
     "typescript": "7.0.2",
     "vite": "catalog:",
     "vite-plus": "catalog:",
@@ -46,6 +46,10 @@
       "name": "pnpm",
       "version": "12.14.0",
       "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "26.13.0"
     }
   }
 }

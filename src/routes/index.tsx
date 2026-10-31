@@ -5,7 +5,6 @@ import { For, Show, createMemo } from "solid-js"
 
 import logo from "@/assets/logo.svg"
 
-import { Counter } from "../components/counter"
 import { getCurrentUser, getUsers, login, logout } from "../lib/users"
 
 // The preload starts these fetches as navigation begins — and it doubles as
@@ -29,7 +28,7 @@ export default function Home() {
       <Title>Home - Solid App</Title>
       <img src={logo} class="logo" alt="Solid logo" />
       <h1>Hello Solid!</h1>
-      <Counter />
+
       <p>
         Edit <code>src/routes/index.tsx</code> and save to reload.
       </p>

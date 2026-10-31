@@ -1,25 +1,20 @@
 import { Portal } from "@solidjs/web"
 import { JSX } from "@solidjs/web/jsx-runtime"
-import { createContext, createUniqueId, ParentProps, useContext } from "solid-js"
+import { createContext, createUniqueId, useContext } from "solid-js"
 
-// native dialog
 type DialogContextApi = { dialogId: string }
 
 const DialogContext = createContext<DialogContextApi>()
-
-const DialogProvider = (props: ParentProps<{ value: DialogContextApi }>) => (
-  <DialogContext value={props.value}>{props.children}</DialogContext>
-)
 
 export const Dialog = (props: JSX.DialogHtmlAttributes<HTMLDialogElement>) => {
   const dialogId = createUniqueId()
 
   return (
-    <DialogProvider value={{ dialogId }}>
+    <DialogContext value={{ dialogId }}>
       <Portal>
-        <dialog id={dialogId} {...props} />
+        <dialog {...props} id={dialogId} class={["fixed max-h-none", props.class]} />
       </Portal>
-    </DialogProvider>
+    </DialogContext>
   )
 }
 

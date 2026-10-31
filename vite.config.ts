@@ -38,6 +38,10 @@ export default defineConfig({
     rules: {
       "vite-plus/prefer-vite-plus-imports": "error",
       "unicorn/filename-case": "warn",
+      "eslint/no-unused-vars": [
+        "warn",
+        { fix: { imports: "safe-fix", variables: "suggestion" } },
+      ],
       ...solidEslintV2.rules,
     },
     ignorePatterns: ["**/*.gen.*", "dist"],

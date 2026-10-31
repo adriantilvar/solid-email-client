@@ -41,6 +41,12 @@ declare module "virtual:file-routes" {
       $$route?: undefined
     },
     {
+      path: "/(mail)/mail/inbox"
+      page: true
+      $component: FileRouteLazyRef<typeof import("./src/routes/(mail)/mail/inbox")>
+      $$route: FileRouteEagerRef<typeof import("./src/routes/(mail)/mail/inbox")>
+    },
+    {
       path: "/*404"
       page: true
       $component: FileRouteLazyRef<typeof import("./src/routes/[...404]")>
@@ -52,12 +58,6 @@ declare module "virtual:file-routes" {
       $GET: FileRouteLazyRef<typeof import("./src/routes/api/users")>
       $HEAD: FileRouteLazyRef<typeof import("./src/routes/api/users")>
       $$route?: undefined
-    },
-    {
-      path: "/"
-      page: true
-      $component: FileRouteLazyRef<typeof import("./src/routes/index")>
-      $$route: FileRouteEagerRef<typeof import("./src/routes/index")>
     },
     {
       path: "/users"
@@ -78,10 +78,10 @@ declare module "virtual:file-routes" {
       $$route?: undefined
     },
     {
-      path: "/(mail)/mail/inbox"
+      path: "/"
       page: true
-      $component: FileRouteLazyRef<typeof import("./src/routes/(mail)/mail/inbox")>
-      $$route: FileRouteEagerRef<typeof import("./src/routes/(mail)/mail/inbox")>
+      $component: FileRouteLazyRef<typeof import("./src/routes/index")>
+      $$route: FileRouteEagerRef<typeof import("./src/routes/index")>
     },
   ]
   export default routes

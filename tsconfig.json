@@ -3,13 +3,13 @@
     // General
     "jsx": "preserve",
     "jsxImportSource": "@solidjs/web",
-    "target": "ESNext",
+    "target": "esnext",
+    "module": "esnext",
 
     // Modules
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "module": "ESNext",
     "moduleResolution": "bundler",
     "noEmit": true,
 

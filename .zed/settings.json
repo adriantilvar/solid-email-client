@@ -17,19 +17,23 @@
           "run": "onSave"
         }
       }
+    },
+    "typescript-ls": {
+      "settings": {
+        "typescript": { "inlay_hints": { "enabled": true }, "code_lens": "on" }
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classFunctions": ["cn"],
+        "classAttributes": ["class", ".*Styles*"]
+      }
     }
   },
-  "formatter": [
-    { "language_server": { "name": "oxfmt" } },
-    { "code_action": "source.fixAll.oxc" },
-    { "code_action": "source.organizeImports.oxc" }
-  ],
-  "format_on_save": "on",
-  "prettier": { "allowed": false },
   "languages": {
     "TypeScript": {
       "language_servers": [
-        "vtsls",
+        "typescript-ls",
         "oxlint",
         "oxfmt",
         "tailwindcss-language-server",
@@ -38,7 +42,7 @@
     },
     "TSX": {
       "language_servers": [
-        "vtsls",
+        "typescript-ls",
         "oxlint",
         "oxfmt",
         "tailwindcss-language-server",
@@ -52,5 +56,12 @@
     "JSONC": { "language_servers": ["oxfmt", "codebook"] },
     "Markdown": { "language_servers": ["oxfmt", "codebook"] },
     "MDX": { "language_servers": ["oxfmt", "codebook"] }
-  }
+  },
+  "prettier": { "allowed": false },
+  "formatter": [
+    { "language_server": { "name": "oxfmt" } },
+    { "code_action": "source.fixAll.oxc" },
+    { "code_action": "source.organizeImports.oxc" }
+  ],
+  "format_on_save": "on"
 }
